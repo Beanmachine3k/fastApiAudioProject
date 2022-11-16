@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InfoPage</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+
+</head>
+<body>
+
+  <p class="p-12 bg-black text-2xl text-white font-bold underline color-white"> Audio Files: </p>
+
+    <h1>{{Error}}</h1>
+    <table class="min-w-[70%] mb-6">
+        <thead class="border-b text-lg text-left">
+
+            <tr>
+                <th class="border"> File name. </th>
+                <th class="border"> File duration. </th>
+                <th class="border"> File type. </th>
+
+            </tr>
+
+        </thead>
+        <tbody class="text-left text-sm">
+
+            {% for file in files %}
+            <tr>
+                <td class="border">{{ files[file].fileName }}</td>
+                <td class="border">{{ files[file].duration }}</td>
+                <td class="border">{{ files[file].fileType }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+
+</body>
+</html>
